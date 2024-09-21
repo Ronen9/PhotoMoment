@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PhotoMaker Selfie Studio</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+    </head>
+    <body>
+        <button id="startOverBtn" class="start-over-btn">Start Over</button>
+        <div class="container">
+            <h1>PhotoMaker Selfie Studio</h1>
+            <div id="cameraContainer" class="camera-container">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas" style="display: none"></canvas>
+                <button id="captureBtn">Take Selfie</button>
+            </div>
+            <div id="previewContainer" style="display: none">
+                <img id="previewImage" src="" alt="Preview" />
+                <div>
+                    <button id="confirmBtn">Confirm</button>
+                    <button id="retakeBtn">Retake</button>
+                </div>
+            </div>
+            <div class="options-container">
+                <select id="locationPrompt">
+                    <option value="">Select a Location</option>
+                    <option value="on a tropical beach">Tropical Beach</option>
+                    <option value="in a futuristic cityscape">
+                        Futuristic City
+                    </option>
+                    <option value="on top of Mount Everest">
+                        Mount Everest
+                    </option>
+                    <option value="in an underwater coral reef">
+                        Underwater Coral Reef
+                    </option>
+                    <option value="on the surface of Mars">Mars Surface</option>
+                    <option value="in a medieval castle">Medieval Castle</option>
+                    <option value="in a futuristic space station">
+                        Futuristic Space Station
+                    </option>
+                    <option value="in a mystical forest">Mystical Forest</option>
+                    <option value="in a cyberpunk city">Cyberpunk City</option>
+                </select>
+                <select id="characterPrompt">
+                    <option value="">Select a Character</option>
+                    <option value="as a superhero">Superhero</option>
+                    <option value="as a medieval knight">
+                        Medieval Knight
+                    </option>
+                    <option value="as a space explorer">Space Explorer</option>
+                    <option value="as a mythical creature">
+                        Mythical Creature
+                    </option>
+                    <option value="as a time traveler">Time Traveler</option>
+                    <option value="as a pirate">Pirate</option>
+                    <option value="as a ninja">Ninja</option>
+                    <option value="as a wizard">Wizard</option>
+                    <option value="as a robot">Robot</option>
+                </select>
+                <select id="stylePrompt">
+                    <option value="Photographic (Default)">Photographic</option>
+                    <option value="Disney Charactor">Disney Character</option>
+                    <option value="Digital Art">Digital Art</option>
+                    <option value="Fantasy art">Fantasy Art</option>
+                    <option value="Neonpunk">Neonpunk</option>
+                    <option value="Comic book">Comic Book</option>
+                    <option value="Lowpoly">Low Poly</option>
+                    <option value="Line art">Line Art</option>
+                    <option value="Watercolor">Watercolor</option>
+                    <option value="Impressionist">Impressionist</option>
+                    <option value="Cubism">Cubism</option>
+                </select>
+            </div>
+            <button id="generateBtn" disabled>Generate Masterpiece</button>
+            <!-- Add this right after the "Generate Masterpiece" button -->
+            <div
+                id="loadingSpinner"
+                class="spinner"
+                style="display: none"
+            ></div>
+            <div id="result">
+                <img
+                    id="outputImage"
+                    src=""
+                    alt="Your masterpiece will appear here"
+                    style="display: none"
+                />
+                <div id="downloadContainer" style="display: none">
+                    <button id="downloadBtn">
+                        <i class="fas fa-download"></i> Download Image
+                    </button>
+                </div>
+            </div>
+        </div>
+        <audio id="shutterSound" src="camera-shutter.mp3"></audio>
+        <script src="script.js"></script>
+    </body>
+</html>
